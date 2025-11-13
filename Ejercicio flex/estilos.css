@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+}
+
+header {
+    background-color: #84250C;
+    color: white;
+    padding: 15px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+header nav a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    margin-top: 150px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 130px;
+}
+
+main h2 {
+    margin-bottom: 12px;
+}
+
+
+.tarjeta {
+    margin-top: 25px;
+    background-color: white;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    padding: 30px;
+    display: flex;
+    gap: 60px;
+}
+
+.oferta {
+    flex: 1.3;
+}
+
+.novedades {
+    flex: 1;
+}
+
+.oferta ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.novedades p {
+    margin-bottom: 12px;
+}
+
+footer {
+    background-color: #84250C;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
