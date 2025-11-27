@@ -1,0 +1,46 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.contenedor {
+    border: 1px solid #666;
+    padding: 10px;
+    margin: 20px;
+    height: 250px; 
+}
+
+
+.caja {
+    float: left; 
+    text-align: center;
+    line-height: 50px; 
+    box-sizing: border-box; 
+}
+
+
+.caja1 {
+    background-color: #79a5d8;      
+    border: 2px solid #888888;      
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+    height: 100px;
+    line-height: 100px;             
+}
+
+.caja2 {
+    background-color: #fff9a6;      
+    width: 20%;
+    height: 50px;
+}
+
+
+.caja3 {
+    background-color: #f28a5b;      
+    border: 1px double #000000;     
+    width: 20%;
+    height: 50px;
+    clear: left;                   
+}
