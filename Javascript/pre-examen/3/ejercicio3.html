@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicios para examen</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h1>Ejercicio 3 - contador de caracteres</h1>
+
+        <textarea id="texto" rows="5" cols="40"
+        placeholder="Escribe aquí">
+        </textarea>
+        
+        <p id="contador">Caracteres: 0</p>
+
+        <script>
+            
+            // captura textarea y contador
+            var texto = document.getElementById("texto");
+            var contador = document.getElementById("contador");
+
+            // Añade ebento input al textarea
+            texto.addEventListener("input", function () {
+                var cantidadCaracteres = texto.value.length;
+                contador.classList.remove = "rojo";
+
+            // acatualiza el numero de cararacteres (texto.value.length)
+                contador.textContent = "Caracteres: " + cantidadCaracteres;
+
+                // si hay mas de 50 caracteres, cambia el color del texto a rojo
+                if (cantidadCaracteres > 50) {
+                    contador.classList.add("rojo");
+                } else {
+                    contador.classList.remove("rojo");
+                }
+            } );
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,127 @@
+﻿<html>
+<head>
+   <meta charset="iso-8859-1" />
+   <title>Prueba con el DOM</title>   
+</head>
+	<body>
+		<p>Lorem ipsum dolor sit amet, <a href="http://prueba">consectetuer adipiscing elit</a>. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. <a href="http://prueba2">Fusce porta</a>.</p>
+		<p>Aenean at nisl. Maecenas egestas dapibus odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin consequat auctor diam. <a href="http://prueba">Ut bibendum blandit est</a>. Curabitur vestibulum. Nunc malesuada porttitor sapien. Aenean a lacus et metus venenatis porta. Suspendisse cursus, sem non dapibus tincidunt, lorem magna porttitor felis, id sodales dolor dolor sed urna. Sed rutrum nulla vitae tellus. Sed quis eros nec lectus tempor lacinia. Aliquam nec lectus nec neque aliquet dictum. Etiam <a href="http://prueba3">consequat sem quis massa</a>.</p>
+		<p id="p3">Vestibulum aliquet, nulla sit amet imperdiet suscipit, nunc erat laoreet est, a <a href="http://prueba">aliquam leo odio sed sem</a>. Quisque eget eros vehicula diam euismod tristique. Proin <a href="http://prueba4">egestas</a> adipiscing ligula. Duis iaculis laoreet turpis. Mauris mollis est sit amet diam. Curabitur hendrerit, eros quis malesuada tristique, ipsum odio euismod tortor, a vestibulum nisl mi at odio. <a href="http://prueba5">Sed non lectus non est pellentesque</a> auctor.</p>   
+	</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="iso-8859-1" />
+  <title>Prueba con el DOM</title>
+</head>
+
+<body>
+  <p>
+    <a href="http://prueba">consectetuer adipiscing elit</a>.
+    Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec,
+    commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede.
+    Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl
+    elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi.
+    <a href="http://prueba2">Fusce porta</a>.
+  </p>
+
+  <p>
+    Aenean at nisl. Maecenas egestas dapibus odio. Vestibulum ante ipsum primis in faucibus orci luctus
+    et ultrices posuere cubilia Curae; Proin consequat auctor diam.
+    <a href="http://prueba">Ut bibendum blandit est</a>.
+    Curabitur vestibulum. Nunc malesuada porttitor sapien. Aenean a lacus et metus venenatis porta.
+    Suspendisse cursus, sem non dapibus tincidunt, lorem magna porttitor felis, id sodales dolor dolor sed urna.
+    Sed rutrum nulla vitae tellus. Sed quis eros nec lectus tempor lacinia. Aliquam nec lectus nec neque
+    aliquet dictum. Etiam
+    <a href="http://prueba3">consequat sem quis massa</a>.
+  </p>
+
+  <p id="p3">
+    Vestibulum aliquet, nulla sit amet imperdiet suscipit, nunc erat laoreet est, a
+    <a href="http://prueba">aliquam leo odio sed sem</a>.
+    Quisque eget eros vehicula diam euismod tristique. Proin
+    <a href="http://prueba4">egestas</a>
+    adipiscing ligula. Duis iaculis laoreet turpis. Mauris mollis est sit amet diam. Curabitur hendrerit,
+    eros quis malesuada tristique, ipsum odio euismod tortor, a vestibulum nisl mi at odio.
+    <a href="http://prueba5">Sed non lectus non est pellentesque</a>
+    auctor.
+  </p>
+
+  <script>
+   
+    window.addEventListener("DOMContentLoaded", () => {
+
+      alert("Número total de enlaces: " + document.links.length);
+
+      if (document.links.length > 0) {
+        alert("El primer enlace apunta a: " + document.links[0].href);
+      } else {
+        alert("No hay enlaces en el documento.");
+      }
+
+      const tercerParrafo = document.getElementById("p3");
+      const enlacesEnTercerParrafo = tercerParrafo ? tercerParrafo.getElementsByTagName("a").length : 0;
+      alert("Enlaces en el tercer párrafo: " + enlacesEnTercerParrafo);
+
+      const parrafos = document.getElementsByTagName("p");
+
+      if (parrafos[0]) parrafos[0].addEventListener("click", nuevoParrafo);
+
+      if (parrafos[1]) parrafos[1].addEventListener("click", quitaParrafo);
+
+     
+      const btnCambiar = document.createElement("input");
+      btnCambiar.type = "button";
+      btnCambiar.value = "Cambiar color";
+      btnCambiar.addEventListener("click", cambiarColor);
+
+      const btnOcultar = document.createElement("input");
+      btnOcultar.type = "button";
+      btnOcultar.value = "Ocultar párrafo";
+      btnOcultar.style.marginLeft = "8px";
+      btnOcultar.addEventListener("click", ocultarParrafo);
+
+      const btnMostrar = document.createElement("input");
+      btnMostrar.type = "button";
+      btnMostrar.value = "Mostrar párrafo";
+      btnMostrar.style.marginLeft = "8px";
+      btnMostrar.addEventListener("click", mostrarParrafo);
+
+      document.body.insertBefore(btnMostrar, document.body.firstChild);
+      document.body.insertBefore(btnOcultar, document.body.firstChild);
+      document.body.insertBefore(btnCambiar, document.body.firstChild);
+      document.body.insertBefore(document.createElement("br"), document.body.firstChild);
+      document.body.insertBefore(document.createElement("br"), document.body.firstChild);
+    });
+
+    function nuevoParrafo() {
+      const p = document.createElement("p");
+      p.textContent = "Nuevo párrafo";
+      document.body.appendChild(p);
+    }
+
+    function quitaParrafo() {
+      const ps = document.getElementsByTagName("p");
+      if (ps.length > 0) {
+        ps[ps.length - 1].remove();
+      }
+    }
+
+    function cambiarColor() {
+      const primerP = document.getElementsByTagName("p")[0];
+      if (primerP) primerP.style.backgroundColor = "yellow";
+    }
+
+    function ocultarParrafo() {
+      const segundoP = document.getElementsByTagName("p")[1];
+      if (segundoP) segundoP.style.display = "none";
+    }
+
+    function mostrarParrafo() {
+      const segundoP = document.getElementsByTagName("p")[1];
+      if (segundoP) segundoP.style.display = "block";
+    }
+  </script>
+</body>
+</html>
